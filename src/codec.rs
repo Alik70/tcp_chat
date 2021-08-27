@@ -25,6 +25,23 @@ pub enum ChatRequest {
     Ping,
 }
 
+/// Server response
+#[derive(Serialize, Deserialize, Debug, Message)]
+#[rtype(result = "()")]
+#[serde(tag = "cmd", content = "data")]
+pub enum ChatResponse {
+    Ping,
+
+    /// List of rooms
+    Rooms(Vec<String>),
+
+    /// Joined
+    Joined(String),
+
+    /// Message
+    Message(String),
+}
+
 /// Codec for Client -> Server transport
 pub struct ChatCodec;
 
