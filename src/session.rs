@@ -120,7 +120,7 @@ impl StreamHandler<Result<ChatRequest, io::Error>> for ChatSession {
 /// Handler for Message, chat server sends this message, we just send string to peer
 impl Handler<Message> for ChatSession {
     type Result = ();
-    fn handle(&mut self, msg: Message, ctx: &mut Self::Context) -> Self::Result {
+    fn handle(&mut self, msg: Message, _: &mut Self::Context) -> Self::Result {
         // send message to peer
         self.framed.write(ChatResponse::Message(msg.0));
     }

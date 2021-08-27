@@ -1,4 +1,4 @@
-mod sessions;
+mod session;
 mod client;
 mod codec;
 mod server;
