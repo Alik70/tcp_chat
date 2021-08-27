@@ -4,5 +4,27 @@ version = "0.1.0"
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "websocket-tcp-server"
+path = "tcp_chat/src/main.rs"
+
+[[bin]]
+name = "websocket-tcp-client"
+path = "tcp_chat/src/client.rs"
 
 [dependencies]
+actix = "0.10"
+actix-web = "3"
+actix-web-actors = "3"
+actix-files = "0.3"
+actix-codec = "0.3"
+
+rand = "0.7"
+bytes = "0.5.3"
+byteorder = "1.2"
+futures = "0.3"
+env_logger = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = "0.2.4"
+tokio-util = "0.3"
