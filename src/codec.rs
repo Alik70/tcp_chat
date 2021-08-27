@@ -3,12 +3,11 @@
 use std::io;
 
 use actix::prelude::*;
-use actix_codec::{AsyncRead, AsyncWrite, Decoder, Encoder};
+use actix_codec::{Decoder, Encoder};
 use byteorder::{BigEndian, ByteOrder};
 use bytes::{BufMut, BytesMut};
 use serde::{Deserialize, Serialize};
 use serde_json as json;
-use tokio_util::codec::Framed;
 
 /// Client request
 #[derive(Serialize, Deserialize, Debug, Message)]
